@@ -1,0 +1,15 @@
+<p>product-list works!</p>
+<p>{{ name }}</p>
+{{ name }}
+<img [src]="image">
+<button (click)="decirHola()">Dime hola</button>
+<input  (blur)="decirHola()">
+<app-product-list-header></app-product-list-header>
+<div *ngFor="let nombre of strings; let index = index">
+    {{ nombre }} - {{ index }}
+</div>
+
+<button (click)="toggleDiv()">Hide div</button>
+<div *ngIf="!isHidden">
+    Este div se debe ocultar
+</div>
