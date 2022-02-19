@@ -1,0 +1,14 @@
+<div>
+    <p>My product list</p>
+    <button (click)="modifyProducts()">
+        {{ enableProductEdit ? 'Stop editing' : 'Modify' }}
+    </button>
+</div>
+<div class="product-list">
+    <app-product
+        *ngFor="let product of products"
+        [product]="product"
+        [enableProductEdit]="enableProductEdit"
+        (onDeleteProduct)="deleteParentProduct($event)"
+    ></app-product>
+</div>

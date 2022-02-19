@@ -1,0 +1,30 @@
+.product-list {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 24px;
+
+    &__element {
+        width: 200px;
+        margin-right: 24px;
+        border: 1px solid lightgrey;
+        margin-bottom: 24px;
+    }
+
+    &__info {
+        padding: 8px;
+    }
+
+    &__image {
+        width: 200px;
+        height: 200px;
+    }
+
+    &__color {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: 1px solid black;
+    }
+
+}
