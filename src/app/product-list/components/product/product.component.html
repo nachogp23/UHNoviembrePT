@@ -1,0 +1,22 @@
+<div
+    *ngIf="product"
+    class="product-list__element"
+>
+    <img class="product-list__image" [src]="product.image">
+    <div class="product-list__info">
+        <p>{{ product.name }}</p>
+        <div
+            class="product-list__color"
+            [ngStyle]="{
+                'background-color': product.color
+            }"
+        ></div>
+        <p>{{ product.materials }}</p>
+        <p>Price: {{ product.price }}$</p>
+        <button
+            *ngIf="enableProductEdit"
+            class="product-list__delete-button"
+            (click)="deleteProduct()"
+        >Delete</button>
+    </div>
+</div>

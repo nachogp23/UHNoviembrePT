@@ -1,15 +1,14 @@
-<p>product-list works!</p>
-<p>{{ name }}</p>
-{{ name }}
-<img [src]="image">
-<button (click)="decirHola()">Dime hola</button>
-<input  (blur)="decirHola()">
-<app-product-list-header></app-product-list-header>
-<div *ngFor="let nombre of strings; let index = index">
-    {{ nombre }} - {{ index }}
+<div>
+    <p>My product list</p>
+    <button (click)="modifyProducts()">
+        {{ enableProductEdit ? 'Stop editing' : 'Modify' }}
+    </button>
 </div>
-
-<button (click)="toggleDiv()">Hide div</button>
-<div *ngIf="!isHidden">
-    Este div se debe ocultar
+<div class="product-list">
+    <app-product
+        *ngFor="let product of products"
+        [product]="product"
+        [enableProductEdit]="enableProductEdit"
+        (onDeleteProduct)="deleteParentProduct($event)"
+    ></app-product>
 </div>
